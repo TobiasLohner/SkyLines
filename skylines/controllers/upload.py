@@ -4,7 +4,7 @@ from tg import expose, request, redirect, validate, flash
 from tg.i18n import ugettext as _, lazy_ugettext as l_
 from repoze.what.predicates import has_permission
 from skylines.controllers.base import BaseController
-from skylines.lib import files
+from skylines.lib import files, app_globals
 from skylines.model import DBSession, User, Flight
 from skylines.lib.md5 import file_md5
 from skylines.lib.xcsoar import analyse_flight
@@ -142,6 +142,10 @@ class UploadController(BaseController):
             DBSession.add(flight)
 
             create_flight_notifications(flight)
+
+            # put flight in analysis queue for full analysis
+            DBSession.expunge(flight)
+            app_globals.config['analysis_queue'].put(flight)
 
             success = True
 

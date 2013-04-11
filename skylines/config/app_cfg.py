@@ -20,7 +20,7 @@ from skylines import model
 
 # unused here, but needed by TurboGears2
 from skylines.lib import app_globals, helpers
-
+from skylines.lib.worker import start_analysis_worker
 
 base_config = AppConfig()
 base_config.renderers = []
@@ -43,6 +43,7 @@ def install_gettext_callables(app):
     return app
 
 base_config.register_hook('after_config', install_gettext_callables)
+base_config.register_hook('after_config', start_analysis_worker)
 
 #base_config.renderers.append('mako')
 # if you want raw speed and have installed chameleon.genshi
