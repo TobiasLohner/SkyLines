@@ -254,9 +254,9 @@ function slBarogram(placeholder) {
    * @param  {DOMElement} placeholder
    */
   function attachEventHandlers(placeholder) {
-    placeholder.on('plothover', function(event, pos) {
+    placeholder.on('plothover', $.throttle(50, function(event, pos) {
       $(baro).trigger('barohover', [pos.x / 1000.]);
-    }).on('mouseout', function(event) {
+    })).on('mouseout', function(event) {
       $(baro).trigger('mouseout');
     });
   }
