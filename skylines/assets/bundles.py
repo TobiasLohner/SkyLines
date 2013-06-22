@@ -96,6 +96,7 @@ all_js = Bundle(
     'vendor/jquery/jquery.browser.js',
     'vendor/jquery/jquery.cookie.js',
     'vendor/jquery/jquery.timeago.js',
+    'https://raw.github.com/cowboy/jquery-throttle-debounce/master/jquery.ba-throttle-debounce.js',
     'js/general.js',
     bootstrap_js,
     'js/topbar.js',
