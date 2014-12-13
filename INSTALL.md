@@ -36,6 +36,17 @@ Now you can install the python dependencies by calling:
 *Note: You might have to install the additional Ubuntu/Debian packages
 `libpq-dev`, `python-dev` and `g++` for the `psycopg2` dependency.*
 
+Most requirements are available as packages in Debian `jessie`, too. If
+you want to use system-wide packages, install the following packages:
+`python-flask`, `python-werkzeug`, `python-flask-babel`, `python-flask-login`,
+`python-flask-migrate`, `python-flask-script`, `python-flask-sqlalchemy`,
+`python-alembic`, `python-psycopg2`, `python-shapely`, `python-crcmod`,
+`python-markdown`, `python-tz`, `python-webassets`, `cssmin`,
+`python-webhelpers`, `python-celery`, `python-redis`, `python-pygments`,
+`python-enum34`, `python-pyproj`, `python-gevent`, `python-flaskext.wtf`.
+Note that there are still some packages required which have to be installed
+using the above pip command.
+
 
 ## PostGIS database
 
