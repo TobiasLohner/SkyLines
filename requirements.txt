@@ -4,13 +4,16 @@
 
 # Install development requirements
 
-fabric==1.8.2
-pytest==2.5.0
+# Packages available in debian jessie
+fabric==1.10.0 # fabric
+pytest==2.6.3 # python-pytest
+zope.testbrowser==4.0.2 # python-zope.testbrowser
+WebTest==2.0.16 # python-webtest
+mock==1.0.1 # python-mock
+flake8==2.2.2 # python-flake8
+pyflakes==0.8.1 # pyflakes
+pep8==1.5.7 # pep8
+
+# Other packages
 wsgiref==0.1.2
-zope.testbrowser==4.0.2
-WebTest==1.4.3
-mock==1.0.1
-flake8==2.1.0
-pyflakes==0.8.1
-pep8==1.5.3
 http://closure-linter.googlecode.com/files/closure_linter-latest.tar.gz
