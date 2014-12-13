@@ -1,6 +1,7 @@
 import struct
-from crc16 import crc16xmodem
+from crcmod import mkCrcFun
 
+crc16xmodem = mkCrcFun(0x11021, rev=False, initCrc=0x0000, xorOut=0x0000)
 
 def calc_crc(data):
     assert len(data) >= 16
